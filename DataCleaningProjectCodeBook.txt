@@ -1,0 +1,166 @@
+1. The purpose of this project was to complete following:
+
+- Analyze data related to a study about tracking cellphone users movemements
+- Summarize a data set after making it tidy
+- Clean data and label it appropriately
+- Perform average on variables
+
+
+2. The list of variables follows:
+
+"colnames.uci_select_measures."
+"1" "tBodyAcc-mean()-X 1"
+"2" "tBodyAcc-mean()-Y 2"
+"3" "tBodyAcc-mean()-Z 3"
+"4" "tGravityAcc-mean()-X 41"
+"5" "tGravityAcc-mean()-Y 42"
+"6" "tGravityAcc-mean()-Z 43"
+"7" "tBodyAccJerk-mean()-X 81"
+"8" "tBodyAccJerk-mean()-Y 82"
+"9" "tBodyAccJerk-mean()-Z 83"
+"10" "tBodyGyro-mean()-X 121"
+"11" "tBodyGyro-mean()-Y 122"
+"12" "tBodyGyro-mean()-Z 123"
+"13" "tBodyGyroJerk-mean()-X 161"
+"14" "tBodyGyroJerk-mean()-Y 162"
+"15" "tBodyGyroJerk-mean()-Z 163"
+"16" "tBodyAccMag-mean() 201"
+"17" "tGravityAccMag-mean() 214"
+"18" "tBodyAccJerkMag-mean() 227"
+"19" "tBodyGyroMag-mean() 240"
+"20" "tBodyGyroJerkMag-mean() 253"
+"21" "fBodyAcc-mean()-X 266"
+"22" "fBodyAcc-mean()-Y 267"
+"23" "fBodyAcc-mean()-Z 268"
+"24" "fBodyAcc-meanFreq()-X 294"
+"25" "fBodyAcc-meanFreq()-Y 295"
+"26" "fBodyAcc-meanFreq()-Z 296"
+"27" "fBodyAccJerk-mean()-X 345"
+"28" "fBodyAccJerk-mean()-Y 346"
+"29" "fBodyAccJerk-mean()-Z 347"
+"30" "fBodyAccJerk-meanFreq()-X 373"
+"31" "fBodyAccJerk-meanFreq()-Y 374"
+"32" "fBodyAccJerk-meanFreq()-Z 375"
+"33" "fBodyGyro-mean()-X 424"
+"34" "fBodyGyro-mean()-Y 425"
+"35" "fBodyGyro-mean()-Z 426"
+"36" "fBodyGyro-meanFreq()-X 452"
+"37" "fBodyGyro-meanFreq()-Y 453"
+"38" "fBodyGyro-meanFreq()-Z 454"
+"39" "fBodyAccMag-mean() 503"
+"40" "fBodyAccMag-meanFreq() 513"
+"41" "fBodyBodyAccJerkMag-mean() 516"
+"42" "fBodyBodyAccJerkMag-meanFreq() 526"
+"43" "fBodyBodyGyroMag-mean() 529"
+"44" "fBodyBodyGyroMag-meanFreq() 539"
+"45" "fBodyBodyGyroJerkMag-mean() 542"
+"46" "fBodyBodyGyroJerkMag-meanFreq() 552"
+"47" "angle(tBodyAccMean,gravity) 555"
+"48" "angle(tBodyAccJerkMean),gravityMean) 556"
+"49" "angle(tBodyGyroMean,gravityMean) 557"
+"50" "angle(tBodyGyroJerkMean,gravityMean) 558"
+"51" "angle(X,gravityMean) 559"
+"52" "angle(Y,gravityMean) 560"
+"53" "angle(Z,gravityMean) 561"
+"54" "tBodyAcc-std()-X 4"
+"55" "tBodyAcc-std()-Y 5"
+"56" "tBodyAcc-std()-Z 6"
+"57" "tGravityAcc-std()-X 44"
+"58" "tGravityAcc-std()-Y 45"
+"59" "tGravityAcc-std()-Z 46"
+"60" "tBodyAccJerk-std()-X 84"
+"61" "tBodyAccJerk-std()-Y 85"
+"62" "tBodyAccJerk-std()-Z 86"
+"63" "tBodyGyro-std()-X 124"
+"64" "tBodyGyro-std()-Y 125"
+"65" "tBodyGyro-std()-Z 126"
+"66" "tBodyGyroJerk-std()-X 164"
+"67" "tBodyGyroJerk-std()-Y 165"
+"68" "tBodyGyroJerk-std()-Z 166"
+"69" "tBodyAccMag-std() 202"
+"70" "tGravityAccMag-std() 215"
+"71" "tBodyAccJerkMag-std() 228"
+"72" "tBodyGyroMag-std() 241"
+"73" "tBodyGyroJerkMag-std() 254"
+"74" "fBodyAcc-std()-X 269"
+"75" "fBodyAcc-std()-Y 270"
+"76" "fBodyAcc-std()-Z 271"
+"77" "fBodyAccJerk-std()-X 348"
+"78" "fBodyAccJerk-std()-Y 349"
+"79" "fBodyAccJerk-std()-Z 350"
+"80" "fBodyGyro-std()-X 427"
+"81" "fBodyGyro-std()-Y 428"
+"82" "fBodyGyro-std()-Z 429"
+"83" "fBodyAccMag-std() 504"
+"84" "fBodyBodyAccJerkMag-std() 517"
+"85" "fBodyBodyGyroMag-std() 530"
+"86" "fBodyBodyGyroJerkMag-std() 543"
+"87" "activity"
+"88" "subject"
+
+3.
+
+The following is courtesy of the original authors of study. It is copied and quoted in entirety. This helps decode the abbreviated names.
+
+"
+
+
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+The complete list of variables of each feature vector is available in 'features.txt'"
